@@ -3,7 +3,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "https://your-production-php-backend.com/api/$1"
+      "destination": "https://lpzndr.helioho.st/hris/api/$1"
     },
     {
       "source": "/(.*)",

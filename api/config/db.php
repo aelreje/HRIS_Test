@@ -15,10 +15,10 @@
 require_once __DIR__ . '/../middleware/cors.php';
 
 // Support for environment variables (Aiven/Vercel) or manual configuration
-$host = getenv('DB_HOST') ?: "localhost"; // Usually localhost on HelioHost
-$db_name = getenv('DB_NAME') ?: "hris_db"; // e.g., username_hris_db
-$username = getenv('DB_USER') ?: "root"; // e.g., username_admin
-$password = getenv('DB_PASS') ?: ""; // e.g., your_db_password
+$host = getenv('DB_HOST') ?: "localhost:3306"; // HelioHost MySQL default
+$db_name = getenv('DB_NAME') ?: "aelopez_hris"; // Your database name
+$username = getenv('DB_USER') ?: "aelopez_hris"; // Your database username
+$password = getenv('DB_PASS') ?: "bootsthatsmyegoboost"; // Your database password
 
 // Aiven often requires SSL; check if a CA cert is provided
 $options = [
