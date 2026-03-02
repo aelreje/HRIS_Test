@@ -52,7 +52,13 @@ const SubNavItem = ({ label, isActive }: { label: string, isActive?: boolean }) 
   </button>
 );
 
-export const AppShell = ({ children, roleId }: { children: React.ReactNode, roleId: number }) => {
+interface AppShellProps {
+  children: React.ReactNode;
+  roleId: number;
+  onLogout: () => void;
+}
+
+export const AppShell = ({ children, roleId, onLogout }: AppShellProps) => {
   const [activeMenu, setActiveMenu] = useState('Attendance');
 
   return (
@@ -118,7 +124,10 @@ export const AppShell = ({ children, roleId }: { children: React.ReactNode, role
 
         {/* Footer */}
         <div className="p-6 bg-white flex gap-3 mt-auto border-t border-slate-50">
-          <button className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-slate-50 text-slate-700 rounded-xl hover:bg-slate-100 transition-all active:scale-[0.98] group">
+          <button 
+            onClick={onLogout}
+            className="flex-1 flex items-center justify-center gap-3 px-6 py-4 bg-slate-50 text-slate-700 rounded-xl hover:bg-slate-100 transition-all active:scale-[0.98] group"
+          >
             <LogOut size={20} className="text-slate-400 group-hover:text-slate-600" />
             <span className="font-bold text-[15px] tracking-tight">Logout</span>
           </button>
@@ -137,5 +146,3 @@ export const AppShell = ({ children, roleId }: { children: React.ReactNode, role
     </div>
   );
 };
-
-
