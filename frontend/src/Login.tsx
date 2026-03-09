@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Mail, Lock, LogIn } from 'lucide-react';
-import { cn } from './lib/utils';
 
 export default function Login({ onLogin }: { onLogin: () => void }) {
   const [email, setEmail] = useState('');

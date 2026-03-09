@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { 
-  FileText, 
   Clock, 
   Calendar, 
   Send, 
   AlertCircle,
-  CheckCircle2,
-  ChevronRight,
   Info,
   Loader2
 } from 'lucide-react';
@@ -39,14 +36,27 @@ export const FilingCenterModule = () => {
     setLoading(true);
 
     try {
-      const common = { employee_id: '1001', agreement_1: true, agreement_2: true };
-      
       if (selectedType === 'leave') {
-        await fileLeave({ ...common, ...formData });
+        await fileLeave({ 
+          leave_type: formData.leave_type,
+          start_date: formData.start_date,
+          end_date: formData.end_date,
+          reason: formData.reason
+        });
       } else if (selectedType === 'overtime') {
-        await fileOvertime({ ...common, ...formData, start_time: `${formData.date} ${formData.start_time}`, end_time: `${formData.date} ${formData.end_time}`, purpose: formData.reason, ot_type: 'Normal' });
+        await fileOvertime({ 
+          date: formData.date,
+          start_time: formData.start_time,
+          end_time: formData.end_time,
+          reason: formData.reason
+        });
       } else if (selectedType === 'dispute') {
-        await fileDispute({ ...common, ...formData, dispute_date: formData.date });
+        await fileDispute({ 
+          attendance_id: 0, // Should be populated from context
+          proposed_time_in: formData.start_time,
+          proposed_time_out: formData.end_time,
+          reason: formData.reason
+        });
       }
 
       showToast(`${selectedType.toUpperCase()} request submitted successfully!`, 'success');

@@ -87,7 +87,6 @@ interface AppShellProps {
 
 export const AppShell = ({ 
   children, 
-  roleId, 
   onLogout,
   activeMenu,
   onMenuChange,

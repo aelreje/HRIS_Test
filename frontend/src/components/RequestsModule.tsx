@@ -2,14 +2,12 @@ import React, { useState, useMemo } from 'react';
 import { 
   Search, 
   Filter, 
-  Calendar, 
   ChevronLeft, 
   ChevronRight,
   ClipboardList,
   Clock,
   CheckCircle2,
   XCircle,
-  ArrowUpRight,
   Loader2,
   FileText
 } from 'lucide-react';

@@ -1,12 +1,10 @@
 import React, { useState, useMemo } from 'react';
 import { 
   Search, 
-  Filter, 
   Calendar, 
   ChevronLeft, 
   ChevronRight,
   ArrowUpRight,
-  X,
   Loader2,
   ListTodo,
   Clock,
