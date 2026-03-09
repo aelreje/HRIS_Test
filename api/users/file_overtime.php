@@ -12,15 +12,13 @@ if (empty($data->employee_id) || empty($data->start_time) || empty($data->end_ti
     exit;
 }
 
-// VALIDATION: Same Date and Max 2 Hours
+// VALIDATION: Future Date only
 $start = new DateTime($data->start_time);
-$end = new DateTime($data->end_time);
 $today = new DateTime('today');
-$yesterday = (new DateTime('yesterday'))->format('Y-m-d');
 
-if ($start->format('Y-m-d') !== $yesterday) {
+if ($start <= $today) {
     http_response_code(400);
-    echo json_encode(["error" => "Overtime can only be filed for yesterday ($yesterday)."]);
+    echo json_encode(["error" => "Overtime must be filed for a future date. Same-day or past-dated filing is not permitted."]);
     exit;
 }
 
