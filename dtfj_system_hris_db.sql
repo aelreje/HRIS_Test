@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
+<<<<<<< Updated upstream
 -- Generation Time: Mar 09, 2026 at 01:46 AM
+=======
+-- Generation Time: Mar 06, 2026 at 06:38 AM
+>>>>>>> Stashed changes
 -- Server version: 10.5.29-MariaDB-log
 -- PHP Version: 8.4.7
 
@@ -232,6 +236,19 @@ CREATE TABLE `roles` (
   `role_description` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+<<<<<<< Updated upstream
+=======
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `role_name`, `role_description`) VALUES
+(1, 'superadmin', 'Full system access'),
+(2, 'admin', 'System administrator with management permissions'),
+(3, 'team coach', 'Supervises and manages employee teams'),
+(4, 'employee', 'Regular employee with limited access');
+
+>>>>>>> Stashed changes
 -- --------------------------------------------------------
 
 --
@@ -547,6 +564,7 @@ ALTER TABLE `user_permissions`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+<<<<<<< Updated upstream
 -- Dumping data for table `roles`
 --
 
@@ -677,6 +695,8 @@ INSERT INTO `time_logs` (`time_log_id`, `user_id`, `employee_id`, `attendance_id
 -- --------------------------------------------------------
 
 --
+=======
+>>>>>>> Stashed changes
 -- Constraints for dumped tables
 --
 
